@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+ content="width=device-width, initial-scale=1.0">
+  <title>Health Consultation Portal</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+          }
+    header {
+      background-color: #007b8f;
+      padding: 1rem;
+      color: white;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: #0a516d;
+    }
+    nav a {
+      flex: 1;
+      padding: 1rem;
+      text-align: center;
+      color: white;
+      text-decoration: none;
+      border-right: 1px solid #005666;
+    }
+    nav a:hover {
+      background-color: #014857;
+    }
+    .container {
+      display: flex;
+      padding: 2rem;
+    }
+    .container img {
+      width: 40%;
+      height: auto;
+      border-radius: 15px;
+    }
+    .info {
+      padding-left: 2rem;
+      flex: 1;
+    }
+    #about-section {
+      text-align: center;
+      padding: 2rem;
+     flex-wrap: wrap;
+    }
+    #about-section img {
+      width: 200px;
+      border-radius: 1000%;
+      margin: 1rem;
+     flex-wrap: wrap;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #007b8f;
+      color: white;
+    }
+body{
+background-image:url(h.jpg);
+
+
+}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Health Consultation Portal</h1>
+  </header>
+  <nav>
+    <a href="#" onclick="loadContent('home')">Home</a>
+    <a href="#" onclick="loadContent('ent')">ENT</a>
+    <a href="#" onclick="loadContent('eye')">Eye</a>
+    <a href="#" onclick="loadContent('pediatric')">Pediatric</a>
+    <a href="#" onclick="loadContent('cardiologist')">Cardiologist</a>
+    <a href="#" onclick="loadContent('general')">General Physician</a>
+    <a href="#" onclick="loadContent('gynecologist')">Gynecologist</a>
+    <a href="#" onclick="loadContent('oncologist')">Oncologist</a>
+    <a href="#" onclick="loadContent('nephrologist')">Nephrologist</a>
+    <a href="#" onclick="loadContent('dentist')">Dentist</a>
+    <a href="#" onclick="loadContent('dermatologist')">Dermatologist</a>
+    <a href="#" onclick="loadContent('psychiatrist')">Psychiatrist</a>
+    <a href="#" onclick="loadContent('about')">About Us</a>
+  </nav>
+<div id="main-content"></div>
+
+  <footer>
+    &copy; 2025 Center For Engineering Exploration.....
+  </footer>
+
+  <script>
+    const contentMap = {
+      home: {
+        image: "hea.jpg?text=Welcome+to+Health+Portal",
+
+
+text: `<h2>Welcome</h2><p>This  is  portal connects you with various health specialists. Click on the categories above to get advice, tips, and diet recommendations for your concerns. Our support team is here to assist you with technical issues,or genral inquiries</p><p>Online Doctor Consultations
+Speak with experienced general practitioners and specialists via video or chat.</p><p>24/7 Medical Support</p><p>Get round-the-clock access to medical advice for urgent queries.</p><p>E-Prescriptions</p>Receive digital prescriptions and treatment plans instantly after consultation.</p>
+<h3>Physical Health:</h3><p>Involves optimal body functioning, including physical activity, nutrition, and preventative care to minimize the risk of diseases</P>
+<h3>Mental Health</h3><p>Focuses on emotional, psychological, and cognitive well-being, including stress management, mental resilience, and positive attitudes.</P> 
+<h3>Social Health</h3><p>Emphasizes positive relationships, social connections, and community involvement, contributing to a sense of belonging and support. </P>
+<h2>Environmental Factors:</h2><p>Exposure to pollutants, toxins, and other environmental hazards can negatively impact health.</P> 
+<h3>Lifestyle Choices:</h3><P>Diet, physical activity, smoking, alcohol consumption, and other habits can significantly affect health outcomes.</P> 
+<h3>Genetic Predisposition:</h3><p>Certain genetic factors can increase the risk of developing specific diseases.</p> 
+<h3>Social Determinants:</h3><P>Factors like socioeconomic status, education, and access to healthcare can influence health outcomes.</P>` 
+      },
+      ent: {
+        image: "ent.jpg?text=ENT",
+        text: `<h2>ENT Care</h2><p>Protect ears, nose, and throat from infections. Avoid loud noises, keep hydrated, and avoid smoking. Regular check-ups are essential.</p><p>Use warm salt water gargles and avoid chilled drinks during throat infections. Avoid inserting objects in ears.</p><p>conditions can stem from allergies, infections, or irritants. To prevent or manage ENT issues, it's important to avoid scratching the ears with instruments, using oil-based ear drops without a doctor's prescription, or forcefully blowing your nose with a cold. Instead, consider using over-the-counter ear drops to soften wax, or seeking professional help for impacted earwax.</p>
+<h2>What ENT doctors do</h2><h3>Diagnose and treat ear conditions:</h3><p>This includes ear infections, hearing loss, tinnitus (ringing in the ears), dizziness, vertigo, and more.</p>
+<h3>Manage nose and sinus problems:</h3><p>This includes sinus infections, allergies, nasal polyps, and other nasal conditions.</p><h3>Treat throat conditions:</h3><p>This includes sore throats, tonsillitis, hoarseness, swallowing difficulties, and throat cancer.</p> <h3>Address head and neck conditions:</h3><p>This includes tumors, neck pain, and other head and neck issues.</p>`
+      },
+      eye: {
+        image: "eye.jpg?text=Eye+Care",
+        text: `<h2>Importance of the Eye:</h2>
+<h3>The human eye is essential for daily life, enabling us to see, perceive depth, and differentiate colors. It's a vital sensory organ, allowing us to interact with our surroundings and learn about the world through sight</h3>
+     <h2>Eye Care</h2><p>Rest your eyes regularly, especially if using screens. Maintain a healthy diet with vitamin A.</p><p>Avoid rubbing eyes with dirty hands. Use sunglasses outdoors and schedule annual eye exams.</p>
+ <h2>How to Take Care of Your Eyes</h2><p>Every 20 minutes, look at something 20 feet away for 20 seconds to reduce digital eye strain.</p><p>When using screens, blink frequently to keep your eyes moist and prevent dryness or irritation.</p>Protect your eyes from harmful UV rays by wearing sunglasses with 100% UVA/UVB protection.</p><p>Visit an eye doctor once a year, especially if you wear glasses or contact lenses, or have diabetes or other health conditions.</p>
+<h2>Common Eye Diseases and their Functions:</h2>
+<h3>Cataracts:</h2><P>Clouding of the eye's lens, leading to blurry or cloudy vision, often in older adults. </P>
+<h3>Glaucoma:</h3><p>Damage to the optic nerve, usually due to increased eye pressure, potentially leading to vision loss, often developing gradually without symptoms. </P>
+<h3>Age-Related Macular Degeneration (AMD):</h3><p>Damage to the macula, the central part of the retina, affecting central vision, common in people over 60. </P>
+<h3>Diabetic Retinopathy:</h3><p>Damage to the retina's blood vessels due to diabetes, leading to vision problems. </P>
+<h3>Retinal Detachment:</h3><p>Separation of the retina from its underlying tissue, requiring prompt treatment to prevent vision loss. </P>
+<h3>Conjunctivitis (Pink Eye):</h3><P>Inflammation of the conjunctiva, the lining of the eye, often caused by infections or allergies.</P>
+<h3>Keratitis:</h3><p>Inflammation of the cornea, the clear front part of the eye, often due to infections or injury.</P>
+<h3>Amblyopia (Lazy Eye):</h3><P>Poor vision in one eye, usually due to misalignment of the eyes or a significant difference in refractive errors.</P>
+<h2>Precautions to Protect Your Eyes:</h2>
+<h3>Regular Eye Exams:</h3><p>Everyone, even those without corrective lenses, should get regular eye exams, typically every 1-2 years (or more often if at risk).</P>
+<h3>Eye Protection:</h3><p>Wear protective eyewear when playing sports, doing home repairs, or working in environments with potential eye hazards. </P>
+<h3>UV Protection:</h3><P>Wear sunglasses that block 99% of UVA and UVB radiation to protect against sun damage.</P>
+<h3>Healthy Lifestyle:</h3><p>Maintain a healthy weight, manage blood sugar levels, and quit smoking to reduce the risk of eye diseases.</P> 
+<h3>Prompt Treatment of Infections:</h3><P>Seek medical attention for eye infections or any sudden changes in vision, especially vision loss. </P>
+<h3>Prioritize Nutrition:</h3><p>Eat a diet rich in fruits and vegetables, which can help support eye health. </P>
+<h3>Follow the 20-20-20 Rule:</h3><p>When working on screens, take a 20-second break every 20 minutes to focus on an object 20 feet away.</P>`
+
+  },
+      pediatric: {
+        image: "pediatric.jpg?text=Pediatric",
+        text: `<h2>Child Health</h2><p>Ensure vaccinations on time. Encourage outdoor play and a balanced diet for children.</p><p>Avoid excess screen time. Give warm liquids during cold seasons and maintain hygiene.</p>
+<h2>how to take care of child </h2><p>To keep children healthy, prioritize a balanced diet, regular physical activity, adequate sleep, and consistent hygiene practices. Regular checkups with a healthcare provider are also crucial for monitoring development and addressing any concerns.</p><p>balanced diet: Ensure children consume a variety of fruits, vegetables, whole grains, lean proteins, and healthy fats.</p><p>daily exercise: Encourage at least 60 minutes of physical activity daily, including a mix of moderate and vigorous activities.</p>Adequate Sleep: Ensure children get enough sleep based on their age, which is crucial for physical and mental health.</p><p>Handwashing: Teach children the importance of washing hands frequently, especially before meals, after using the restroom, and after playing outside.</p>`
+      },
+      cardiologist: {
+        image: "heart.jpeg?text=Cardiologist",
+        text: `<h2>Heart Care</h2><p>Eat less saturated fat, more fruits and vegetables. Regular walking and exercise are key.</p><p>Control blood pressure and avoid smoking. Meditation and stress management improve heart health.</p>
+<h2>how to take care of heart</h2><p># Eat a Heart-Healthy Diet</p><p>Focus on fruits, vegetables, whole grains, and lean proteins (like fish, poultry, beans).</p><p># Exercise Regularly</p><p>Aim for at least 150 minutes of moderate aerobic activity or 75 minutes of vigorous activity per week.</p>
+<h2>Diagnosis</h2><p>Cardiology employs various diagnostic tools to identify heart problems, including electrocardiograms (ECGs), echocardiograms, stress tests, and blood tests.</p>
+<h2>Treatment</h2><p>Treatments range from lifestyle modifications and medications to advanced procedures like angioplasty, stent placement, and cardiac surgery.</p>
+<h2>Prevention</h2><p>Cardiologists also play a role in educating patients about risk factors, promoting heart-healthy habits, and providing advice on preventing heart disease.</p>
+<h2>Subspecialties</h2><p>Cardiology has various subspecialties, such as interventional cardiology, cardiac electrophysiology, and pediatric cardiology, allowing for focused expertise in different areas of heart and circulatory health</p>`
+
+
+  },
+      general: {
+        image: "general.jpg?text=General+Physician",
+        text: `<h2>General Health</h2><p>A general health check-up with a doctor can include various tests and screenings, such as blood pressure, cholesterol, and blood sugar checks, as well as screenings for diseases like colorectal cancer.</p><h2>types of General Health Check-ups and Screenings:</h2><h3>Blood Pressure:</h3><p>Regular checks are important to monitor for high blood pressure, a risk factor for heart disease and stroke.</p><h3>Cholesterol:</h3><p>Checking cholesterol levels, including LDL (bad) and HDL (good) cholesterol, can help identify risks for heart disease. </p><h3>Blood Sugar:</h3><p>Blood sugar testing can help diagnose and manage diabetes, especially important for those at increased risk.</p> <h3>Colorectal Cancer Screening:</h3><p>Colorectal cancer screening, such as colonoscopies or fecal immunochemical tests, can detect early-stage cancer and polyps.</p> <h3>Other Screenings:</h3><p>Depending on individual risk factors and age, other screenings like mammograms, Pap tests, and prostate exams may be recommended.</p> <h3>Physical Examination:</h3><p>A general physical exam can include checks of vital signs, skin, eyes, ears, heart, lungs, and abdomen.</p>`
+
+},
+      gynecologist: {
+        image: "gyno.jpg?text=Gynecologist",
+        text: `<h2>Women's Health</h2><p>A gynecologist is a medical doctor specializing in the female reproductive system and related health issues. They diagnose and treat conditions affecting the uterus, ovaries, fallopian tubes, and other organs of the reproductive system.</p><p> Gynecologists also provide care during pregnancy and childbirth, although this is often done by obstetricians, who are a type of gynecologist specializing in pregnancy and childbirth.</p>
+<h2>Key areas of focus for gynecologists include:</h2>
+<h3>Diagnosis and treatment of reproductive system disorders:</h3><p>This includes conditions like endometriosis, ovarian cysts, uterine fibroids, vaginal infections, and cancers of the uterus, ovaries, or cervix.</p><h3>Preventive care:</h3><p>Gynecologists perform Pap smears, pelvic exams, and other screenings to detect and prevent diseases like cervical cancer.</p>
+<h3>Menstrual cycle and fertility:</h3></p>They address issues related to menstruation, fertility problems, and other reproductive health concerns.</p><h3>Menopause:</h3><p>Gynecologists provide care and support for women during menopause, including hormone therapy and management of symptoms.</p> <h3>Sexually transmitted infections (STIs):</h3><p>They diagnose and treat STIs, such as chlamydia, gonorrhea, and HIV, and provide counseling on sexual health.</p><h3>Contraception:</h3><p>Gynecologists help women choose and use appropriate contraception methods.</p> <h3>Pregnancy and childbirth (for OB/GYNs):</h3><p>OB/GYNs provide prenatal care, deliver babies, and manage complications during pregnancy.</p>`
+
+      },
+      oncologist: {
+        image: "oncology.jpg?text=Oncologist",
+        text: `<h2>Cancer Prevention</h2><p>Avoid tobacco and limit alcohol. Eat antioxidant-rich foods like berries and green tea.</p><p>Regular screenings help early detection. Stay physically active and maintain ideal weight.</p> <h2>key strategies into your lifestyle</h2>
+<p>1. Eat a Healthy, Balanced Diet: Focus on a diet rich in fruits, vegetables, whole grains, and healthy proteins. Limit processed meats, red meat, and high-calorie foods and drinks. A balanced diet can help protect against cancer, says the Cancer Research UK.</p>
+<p>2. Maintain a Healthy Weight: Obesity is linked to several types of cancer. A healthy weight can be achieved through a balanced diet and regular exercise.</p>
+<p>3. Exercise Regularly: Physical activity has numerous health benefits, including a reduced risk of cancer. Aim for at least 150 minutes of moderate-intensity exercise or 75 minutes of vigorous-intensity exercise per week, recommends the American Institute for Cancer Research says.</p> 
+<p>4. Protect Yourself from the Sun: Overexposure to UV radiation can increase the risk of skin cancer. Protect yourself by wearing sunscreen, hats, and sunglasses, and avoiding prolonged sun exposure, recommends the Mayo Clinic.</p>
+<p>5. Avoid Smoking and Limit Alcohol: Smoking is a major cause of cancer. Limiting alcohol consumption can also reduce your risk.</p>
+<p>6. Get Vaccinated: Certain vaccines can protect against viral infections that can increase the risk of some cancers.</p>
+<p>7. Be Mindful of Your Environment and Potential Toxins: Avoid exposure to industrial and environmental toxins like asbestos, benzene, and radon, advises Harvard Health.</p>
+<p>8. Get Screened for Cancer Regularly: Early detection of cancer is crucial for successful treatment. Discuss screening recommendations with your doctor based on your individual risk factors.</p>
+<p>9. Prioritize Sleep: Poor sleep quality is linked to weight gain, which can increase cancer risk.</p> 
+<p>10. Consider Vitamin D Supplementation: Some evidence suggests that adequate vitamin D levels may help reduce the risk of certain cancers.</p>`
+      },
+      nephrologist: {
+        image: "nephrology.jpg?text=Nephrologist",
+        text: `<h2>Kidney Health</h2>
+<h2>When to see a nephrologist:</h2>
+<h3>Signs of kidney disease:</h3>
+<p>Swelling (especially in the legs, ankles, or feet), fatigue, shortness of breath, changes in urination (frequency, color, or amount), persistent itching, bone pain, or foamy urine.</p> 
+<h3>Risk factors:</h3>
+<p>Diabetes, high blood pressure, a family history of kidney disease, certain autoimmune diseases, or repeated kidney infections.</p> 
+<h3>Medications:</h3>
+<p>If you're taking medications that can affect kidney function, such as certain antibiotics or pain relievers, a nephrologist can help assess the risk and manage your kidneys.</p> 
+<h3>Pregnancy:</h3>
+<p>If you're pregnant and experience high blood pressure, protein in your urine, or swelling, a nephrologist can help monitor and manage these conditions.</p>
+<h3>Kidney stones:</h3>
+<p>If you've had recurring kidney stones, a nephrologist can help identify the cause and recommend treatment.</p> 
+<h2>How to take care of kidney health:</h2>
+<p>Manage diabetes and high blood pressure: These conditions can significantly damage your kidneys.</p>
+<p>Follow a healthy diet: Limit salt intake, avoid processed foods, and eat plenty of fruits and vegetables.</p>
+<p>Stay hydrated: Drink enough water to help your kidneys function properly.</p>
+<p>Regular exercise: Physical activity can help control blood pressure, manage weight, and improve overall health. </p>
+<p>Avoid smoking: Smoking can damage your kidneys and increase your risk of kidney disease. </p>
+<p>Limit alcohol consumption: Excessive alcohol intake can put a strain on your kidneys. </p>
+<p>Manage other health conditions: If you have heart disease, certain autoimmune disorders, or other chronic conditions, work with your doctor to manage them properly. </p>
+<p>Regular check-ups: See your doctor or a nephrologist regularly, especially if you have risk factors for kidney disease. </p>` 
+      },
+      dentist: {
+        image: "dentist.jpg?text=Dentist",
+        text: `<h2>Dental Care</h2><h2>Detailed Steps for Dental Care:</h2>
+<h3>1. Brush Twice a Day:</h3>
+<p>Use a soft-bristled toothbrush and fluoride toothpaste, brushing for at least two minutes each time.</p> 
+<h3>2. Floss Daily:</h3>
+<p>Floss between your teeth to remove plaque and food particles that a toothbrush can't reach.</p> 
+<h3>3. Regular Dental Checkups:</h3>
+<p>Schedule regular visits to your dentist for professional cleanings and checkups.</p> 
+<h3>4. Eat a Healthy Diet:</h3>
+<p>Limit sugary foods and drinks, and focus on a balanced diet rich in fruits, vegetables, and calcium.</p>
+<h3>5. Avoid Tobacco:</h3>
+<p>Smoking significantly increases your risk of gum disease and other dental problems. </p>
+<h3>6. Consider Mouthwash:</h3>
+<p>Using an antibacterial mouthwash can help reduce bacteria in your mouth and freshen your breath.</p> 
+<h3>7. Replace Your Toothbrush Regularly:</h3>
+<p>Replace your toothbrush every three to four months or sooner if the bristles are worn out.</p>`
+
+
+      },
+      dermatologist: {
+        image: "dermatology.jpg?text=Dermatologist",
+        text: `<h2>Skin Care</h2><p>A simple, effective skincare routine involves cleansing, moisturizing, and protecting the skin from sun damage. Dermatologists recommend a focus on these basics and avoiding unnecessary products or harsh treatments.</p>
+<h2>Basic Skincare Routine:</h2>
+<h3>1. Cleanse:</h3><p>Wash your face gently twice a day with a mild, non-medicated cleanser. Use lukewarm water and pat your skin dry.</p><h3>2. Treat:</h3><p>Apply a serum or cream with antioxidants (like Vitamin C or E) to protect against environmental damage.</p><h3>3. Moisturize:</h3><p>Apply a moisturizer to hydrate the skin. Choose a moisturizer that's appropriate for your skin type (dry, oily, or combination).</p><h3>4. Protect:</h3><p>Always wear sunscreen with an SPF of 30 or higher to protect your skin from sun damage.</p>
+<h2>Additional Tips:</h2><p>Limit bath time and use warm water instead of hot water .</p>
+<p>Don't use strong soaps .</p>
+<p>Shave carefully, using shaving cream or gel and a clean, sharp razor .</p>
+<p>Eat a healthy diet and drink plenty of water .</p>
+<p>Consider gentle exfoliation once a week .</p>
+<p>Be mindful of ingredients that may irritate your skin, such as alcohol, AHAs, and retinoids .</p>
+<p>Avoid over-scrubbing or exfoliating .</p>
+<p>Change pillowcases regularly to prevent irritation .</p>`
+
+
+      },
+      psychiatrist: {
+        image: "psychy.jpg?text=Psychiatrist",
+        text: `<h2>Mental Health</h2><p>Talk about your feelings. Avoid isolation. Regular sleep and good diet matter.</p><p> prioritize self-care, including getting enough sleep, staying physically active, eating a nutritious diet, and practicing mindfulness and relaxation techniques.</p>
+<h2>What a Psychiatrist Does:</h2>
+<h3>Diagnosis:</h3><p>Psychiatrists diagnose and evaluate mental health conditions, including conditions like anxiety, depression, bipolar disorder, and schizophrenia.</p>
+<h3>Medication Management:</h3>
+<p>They can prescribe and monitor psychiatric medications, which can be an important part of treatment for many mental health conditions.</p>
+<h3>Therapy:</h3><p>They provide various forms of psychotherapy, such as cognitive behavioral therapy (CBT), to help individuals develop coping strategies and address underlying issues.</p> 
+<h3>Individualized Treatment:</h3><p>Psychiatrists develop personalized treatment plans based on the individual's specific needs and circumstances.</p>
+<h3>Ongoing Support:</h3><p>They offer ongoing support and guidance as individuals navigate their recovery journey.</p>
+<h2>How to Take Care of Your Mental Health:</h2>
+<p>Prioritize Sleep: Aim for 7-9 hours of sleep per night and establish a consistent sleep schedule.</p>
+<p>Stay Physically Active: Regular exercise can improve mood, reduce stress, and boost energy levels.</p> 
+<p>Eat a Nutritious Diet: A balanced diet can support both physical and mental health.</p> 
+<p>Practice Mindfulness and Relaxation: Techniques like meditation, deep breathing, and yoga can help reduce stress and promote relaxation.</p> 
+<p>Connect with Others: Build and maintain strong social connections with family, friends, and support groups. </p>
+<p>Practice Gratitude: Focusing on positive aspects of your life can help shift your perspective and improve your mood. </p>
+<p>Seek Professional Help: If you are struggling with a mental health condition, don't hesitate to seek help from a psychiatrist or other mental health professional.</p>` 
+      },
+      about: {
+        image: "",
+        text: `<div id="about-section">
+          <h2>About Us</h2>
+          <img src="aditi.jpg" alt="Student 1">
+          <p><strong>Name:</strong> Aditi Amte<br><strong>Roll No:</strong> CS1101</p>
+
+          <img src="gauri.jpg" alt="Student 2">
+          <p><strong>Name:</strong> Gauri Jadhav<br><strong>Roll No:</strong> CS1159</p>
+
+         <img src="viki.jpg" alt="Student 1">
+          <p><strong>Name:</strong> Vikas Dhanewad <br><strong>Roll No:</strong> CS1133</p>
+
+        <img src="namrata.jpg" alt="Student 1">
+          <p><strong>Name:</strong> Namrata kakde <br><strong>Roll No:</strong> CS1167</p>
+
+        <img src="harshad.jpg" alt="Student 1">
+          <p><strong>Name:</strong> Harshad Awchar <br><strong>Roll No:</strong> CS1103</p>
+
+          <h3>Center for Engineering Exploration</h3>
+          <p>Mentor: <strong>Prof. S. R. Milke (7276109511)</strong></p>
+        </div>`
+      }
+    };
+
+    function loadContent(key) {
+      const content = contentMap[key];
+      if (!content) return;
+
+      const container = document.getElementById('main-content');
+      container.innerHTML = content.image
+        ? `<div class="container">
+             <img src="${content.image}" alt="${key}">
+             <div class="info">${content.text}</div>
+           </div>`
+        : content.text;
+    }
+
+    // Load default home content on startup
+    loadContent('home');
+  </script>
+</body>
+</html>

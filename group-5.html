@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health Consultation Portal</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+    }
+    header {
+      background-color: #007b8f;
+      padding: 1rem;
+      color: white;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: #0a516d;
+    }
+    nav a {
+      flex: 1;
+      padding: 1rem;
+      text-align: center;
+      color: white;
+      text-decoration: none;
+      border-right: 1px solid #005666;
+    }
+    nav a:hover {
+      background-color: #014857;
+    }
+    .container {
+      display: flex;
+      padding: 2rem;
+    }
+    .container img {
+      width: 40%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .info {
+      padding-left: 2rem;
+      flex: 1;
+    }
+    #about-section {
+      text-align: left;
+      padding: 2rem;
+     flex-wrap: wrap;
+    }
+    #about-section img {
+      width: 150px;
+      border-radius: 100%;
+      margin: 1rem;
+     flex-wrap: wrap;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #007b8f;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Health Consultation Portal</h1>
+  </header>
+  <nav>
+    <a href="#" onclick="loadContent('home')">Home</a>
+    <a href="#" onclick="loadContent('ent')">ENT</a>
+    <a href="#" onclick="loadContent('eye')">Eye</a>
+    <a href="#" onclick="loadContent('pediatric')">Pediatric</a>
+    <a href="#" onclick="loadContent('cardiologist')">Cardiologist</a>
+    <a href="#" onclick="loadContent('general')">General Physician</a>
+    <a href="#" onclick="loadContent('gynecologist')">Gynecologist</a>
+    <a href="#" onclick="loadContent('oncologist')">Oncologist</a>
+    <a href="#" onclick="loadContent('nephrologist')">Nephrologist</a>
+    <a href="#" onclick="loadContent('dentist')">Dentist</a>
+    <a href="#" onclick="loadContent('dermatologist')">Dermatologist</a>
+    <a href="#" onclick="loadContent('psychiatrist')">Psychiatrist</a>
+    <a href="#" onclick="loadContent('about')">About Us</a>
+  </nav>
+
+  <div id="main-content"></div>
+
+  <footer>
+    &copy; 2025 Center For Engineering Exploration.....
+  </footer>
+
+  <script>
+    const contentMap = {
+      home: {
+        image: "viakas.jpg?text=Welcome+to+Health+Portal",
+        text: `<h2>Welcome</h2><p>This portal connects you with various health specialists. Click on the categories above to get advice, tips, and diet recommendations for your concerns.</p>`
+      },
+      ent: {
+        image: "ent.jpg?text=ENT",
+        text: `<h2>ENT Care</h2><p>Protect ears, nose, and throat from infections. Avoid loud noises, keep hydrated, and avoid smoking. Regular check-ups are essential.</p><p>Use warm salt water gargles and avoid chilled drinks during throat infections. Avoid inserting objects in ears.</p>`
+      },
+      eye: {
+        image: "eye.jpg?text=Eye+Care",
+        text: `<h2>Eye Care</h2><p>Rest your eyes regularly, especially if using screens. Maintain a healthy diet with vitamin A.</p><p>Avoid rubbing eyes with dirty hands. Use sunglasses outdoors and schedule annual eye exams.</p>`
+      },
+      pediatric: {
+        image: "pediatric.jpg?text=Pediatric",
+        text: `<h2>Child Health</h2><p>Ensure vaccinations on time. Encourage outdoor play and a balanced diet for children.</p><p>Avoid excess screen time. Give warm liquids during cold seasons and maintain hygiene.</p>`
+      },
+      cardiologist: {
+        image: "cardiology.jpg?text=Cardiologist",
+        text: `<h2>Heart Care</h2><p>Eat less saturated fat, more fruits and vegetables. Regular walking and exercise are key.</p><p>Control blood pressure and avoid smoking. Meditation and stress management improve heart health.</p>`
+      },
+      general: {
+        image: "general.jpg?text=General+Physician",
+        text: `<h2>General Health</h2><p>Stay hydrated, get 7–8 hours of sleep, and avoid junk food.</p><p>Do basic physical activity daily. Take multivitamins if necessary and maintain hygiene.</p>`
+      },
+      gynecologist: {
+        image: "gyno.jpg?text=Gynecologist",
+        text: `<h2>Women's Health</h2><p>Maintain menstrual hygiene. Eat iron-rich and calcium-rich foods.</p><p>Get regular screenings for breast and cervical health. Avoid stress and take adequate rest.</p>`
+      },
+      oncologist: {
+        image: "oncology.jpg?text=Oncologist",
+        text: `<h2>Cancer Prevention</h2><p>Avoid tobacco and limit alcohol. Eat antioxidant-rich foods like berries and green tea.</p><p>Regular screenings help early detection. Stay physically active and maintain ideal weight.</p>`
+      },
+      nephrologist: {
+        image: "nephrology.jpg?text=Nephrologist",
+        text: `<h2>Kidney Health</h2><p>Drink enough water. Avoid high salt intake and uncontrolled use of painkillers.</p><p>Control diabetes and blood pressure. Get kidney function tests if risk factors are present.</p>`
+      },
+      dentist: {
+        image: "dentist.jpg?text=Dentist",
+        text: `<h2>Dental Care</h2><p>Brush twice daily. Avoid excessive sweets and carbonated drinks.</p><p>Visit the dentist every 6 months. Use proper brushing technique and floss regularly.</p>`
+      },
+      dermatologist: {
+        image: "dermatology.jpg?text=Dermatologist",
+        text: `<h2>Skin Care</h2><p>Use sunscreen, moisturize daily. Avoid harsh soaps.</p><p>Stay hydrated. Treat acne early and avoid popping pimples. Eat fruits and greens.</p>`
+      },
+      psychiatrist: {
+        image: "psychy.jpg?text=Psychiatrist",
+        text: `<h2>Mental Health</h2><p>Talk about your feelings. Avoid isolation. Regular sleep and good diet matter.</p><p>Seek help if stressed or anxious. Meditation and hobbies improve mental health.</p>`
+      },
+      about: {
+        image: "",
+        text: `<div id="about-section">
+          <h2>About Us</h2>
+          <img src="aditi.jpg" alt="Student 1">
+          <p><strong>Name:</strong> Aditi Amte<br><strong>Roll No:</strong> CS1101</p>
+
+          <img src="https://via.placeholder.com/150" alt="Student 2">
+          <p><strong>Name:</strong> Gauri Jadhav<br><strong>Roll No:</strong> CS1159</p>
+
+         <img src="https://via.placeholder.com/150" alt="Student 1">
+          <p><strong>Name:</strong> Vikas Dhanewad <br><strong>Roll No:</strong> CS1133</p>
+
+        <img src="https://via.placeholder.com/150" alt="Student 1">
+          <p><strong>Name:</strong> Namrata kakde <br><strong>Roll No:</strong> CS1167/p>
+
+        <img src="https://via.placeholder.com/150" alt="Student 1">
+          <p><strong>Name:</strong> Harshad Awchar <br><strong>Roll No:</strong> CS1103</p>
+
+          <h3>Center for Engineering Exploration</h3>
+          <p>Mentor: <strong>Prof. S. R. Milke (7276109511)</strong></p>
+        </div>`
+      }
+    };
+
+    function loadContent(key) {
+      const content = contentMap[key];
+      if (!content) return;
+
+      const container = document.getElementById('main-content');
+      container.innerHTML = content.image
+        ? `<div class="container">
+             <img src="${content.image}" alt="${key}">
+             <div class="info">${content.text}</div>
+           </div>`
+        : content.text;
+    }
+
+    // Load default home content on startup
+    loadContent('home');
+  </script>
+</body>
+</html>
